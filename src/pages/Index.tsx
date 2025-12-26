@@ -1,11 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect, useState } from 'react';
+import Hero from '@/components/Hero';
+import Greeting from '@/components/Greeting';
+import Wishes from '@/components/Wishes';
+import VideoSection from '@/components/VideoSection';
+import Gallery from '@/components/Gallery';
+import Contact from '@/components/Contact';
+import Snowfall from '@/components/Snowfall';
 
 const Index = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
+    <div className="relative min-h-screen bg-gradient-to-b from-[#F1F0FB] via-[#E5DEFF] to-[#D3E4FD] overflow-hidden">
+      <Snowfall />
+      <div className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        <Hero />
+        <Greeting />
+        <Wishes />
+        <VideoSection />
+        <Gallery />
+        <Contact />
       </div>
     </div>
   );
