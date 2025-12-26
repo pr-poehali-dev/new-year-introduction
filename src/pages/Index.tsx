@@ -6,6 +6,7 @@ import VideoSection from '@/components/VideoSection';
 import Gallery from '@/components/Gallery';
 import Contact from '@/components/Contact';
 import Snowfall from '@/components/Snowfall';
+import MusicPlayer from '@/components/MusicPlayer';
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,6 +18,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#F1F0FB] via-[#E5DEFF] to-[#D3E4FD] overflow-hidden">
       <Snowfall />
+      <MusicPlayer />
       <div className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <Hero />
         <Greeting />
